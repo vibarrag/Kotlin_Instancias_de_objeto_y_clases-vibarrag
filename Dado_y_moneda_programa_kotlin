@@ -1,0 +1,35 @@
+fun main() {
+	val myFirstDice = Dice(6, "blue")
+    //println(myFirstDice.sides)
+    println("Your ${myFirstDice.numSides} sided ${myFirstDice.colour} dice rolled ${myFirstDice.roll()}!")
+    
+    val mySecondDice = Dice(20, "red")
+    println("Your ${mySecondDice.numSides} sided ${mySecondDice.colour} dice rolled  ${mySecondDice.roll()}!")
+    /*
+    myFirstDice.sides=20
+    println("Your ${myFirstDice.numSides} sided dice rolled ${myFirstDice.roll()}!")
+    */
+    
+    val myFirstCoin = Coin()
+    println("Your coin got ${myFirstCoin.launch()}!")
+   
+}
+
+class Dice(val numSides: Int, val colour: String) {
+	//var sides = 6
+    
+    fun roll(): Int {
+		return (1..numSides).random()
+    }
+}
+
+class Coin() {
+	
+    fun launch(): String {
+		if((0..1).random()==0){
+            return "Head"
+        }else{
+            return "Tail"
+        }
+    }
+}
